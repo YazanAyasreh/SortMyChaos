@@ -1,49 +1,101 @@
 # SortMyChaos Pro
 
-![SortMyChaos Pro](image-0.png)
+<div align="center">
+  <img src="image-0.png" alt="SortMyChaos Pro" width="600"/>
+  
+  [![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+  [![Build Status](https://github.com/yourusername/SortMyChaos/actions/workflows/python-app.yml/badge.svg)](https://github.com/yourusername/SortMyChaos/actions)
+  
+  *A high-performance, asynchronous file management engine that organizes your chaotic directories with lightning speed and professional-grade features.*
+</div>
 
-[![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://github.com/yourusername/SortMyChaos/actions/workflows/python-app.yml/badge.svg)](https://github.com/yourusername/SortMyChaos/actions)
+---
 
-> A high-performance, asynchronous file management engine that organizes your chaotic directories with lightning speed and professional-grade features.
+## 📋 Table of Contents
 
-## Table of Contents
+- [✨ Features](#-features)
+- [🚀 Quick Start](#-quick-start)
+- [📸 Screenshots](#-screenshots)
+- [🔧 Installation](#-installation)
+- [📖 Usage](#-usage)
+- [⚙️ Configuration](#️-configuration)
+- [🔄 Undo Functionality](#-undo-functionality)
+- [📝 Logging](#-logging)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [👨‍💻 Developer](#-developer)
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Undo Functionality](#undo-functionality)
-- [Logging](#logging)
-- [Contributing](#contributing)
-- [License](#license)
-- [Developer](#developer)
+---
 
-## Features
+## ✨ Features
 
-✨ **Asynchronous Engine**: Utilizes `asyncio` and `pathlib` for blazing-fast file operations, handling thousands of files efficiently without blocking.
+<div align="center">
 
-🔄 **Undo Functionality**: Maintains a local SQLite database to track all moves, allowing you to seamlessly undo the last organization session.
+| Feature | Description |
+|---------|-------------|
+| 🚀 **Asynchronous Engine** | Utilizes `asyncio` and `pathlib` for blazing-fast file operations, handling thousands of files efficiently without blocking |
+| 🔄 **Undo Functionality** | Maintains a local SQLite database to track all moves, allowing you to seamlessly undo the last organization session |
+| ⚙️ **Customizable Configuration** | Uses a `config.yaml` file for defining file categories and extensions. Automatically creates a default config if none exists |
+| 🎨 **Modern Terminal UI** | Features a professional dashboard built with the Rich library, including real-time progress indicators, summary tables, and status panels |
+| 📝 **Comprehensive Logging** | Logs all activities and errors to `sort_log.txt` for debugging and auditing purposes |
+| 🌍 **Cross-Platform** | Works seamlessly on Windows, macOS, and Linux |
 
-⚙️ **Customizable Configuration**: Uses a `config.yaml` file for defining file categories and extensions. Automatically creates a default config if none exists.
+</div>
 
-🎨 **Modern Terminal UI**: Features a professional dashboard built with the Rich library, including:
-  - Real-time progress indicators
-  - Summary tables showing file types, counts, and sizes
-  - Status panels for system feedback
+---
 
-📝 **Comprehensive Logging**: Logs all activities and errors to `sort_log.txt` for debugging and auditing purposes.
+## 🚀 Quick Start
 
-🚀 **Cross-Platform**: Works on Windows, macOS, and Linux.
+```bash
+# Clone and setup
+git clone https://github.com/yourusername/SortMyChaos.git
+cd SortMyChaos
+pip install -r requirements.txt
 
-## Installation
+# Organize your downloads folder
+python main.py ~/Downloads
 
-### Prerequisites
-- Python 3.9 or higher
-- pip package manager
+# Oops? Undo it!
+python main.py --undo
+```
 
-### Steps
+---
+
+## 📸 Screenshots
+
+### Terminal Interface
+```
+┌─ System Status ──────────────────────────────────────┐
+│ Starting organization...                              │
+└───────────────────────────────────────────────────────┘
+
+Organizing files... ⠦
+
+┌─ File Organization Summary ──────────────────────────┐
+│ Category    Count    Total Size (MB)                 │
+├──────────────────────────────────────────────────────┤
+│ Images      15       245.67                          │
+│ Documents   8        12.34                           │
+│ Videos      3        1024.56                          │
+│ Others      2        5.78                             │
+└───────────────────────────────────────────────────────┘
+
+┌─ System Status ──────────────────────────────────────┐
+│ Organization complete!                               │
+└───────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🔧 Installation
+
+### 📋 Prerequisites
+- **Python**: 3.9 or higher
+- **pip**: Python package manager
+- **Operating System**: Windows, macOS, or Linux
+
+### 🛠️ Steps
 
 1. **Clone the repository**:
    ```bash
@@ -51,62 +103,68 @@
    cd SortMyChaos
    ```
 
-2. **Install dependencies**:
+2. **Create virtual environment** (recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Verify installation**:
+4. **Verify installation**:
    ```bash
    python main.py --help
    ```
 
-## Usage
+---
+
+## 📖 Usage
 
 ### Organize a Directory
 ```bash
 python main.py /path/to/your/directory
 ```
 
-This command will:
-- Scan the specified directory for files
-- Move files into categorized subfolders based on extensions
-- Display a live progress indicator
-- Show a summary table with file counts and sizes
+**What happens:**
+- 🔍 Scans the specified directory for files
+- 📂 Moves files into categorized subfolders based on extensions
+- 📊 Displays a live progress indicator
+- 📈 Shows a summary table with file counts and sizes
 
 ### Undo the Last Organization
 ```bash
 python main.py --undo
 ```
 
-This will reverse all moves from the most recent organization session.
+**Features:**
+- 🔙 Reverses all moves from the most recent organization session
+- 🛡️ Safe operation that restores original file locations
+- 🗃️ Automatically cleans up the database after undo
 
-### Example Output
+### Command Line Options
 ```
-System Status
-─────────────
-Starting organization...
+usage: main.py [-h] [--undo] [directory]
 
-Organizing files... ✓
+SortMyChaos Pro - File Organizer
 
-File Organization Summary
-─────────────────────────
-Category    Count    Total Size (MB)
-Images      15       245.67
-Documents   8        12.34
-Videos      3        1024.56
-Others      2        5.78
+positional arguments:
+  directory   Directory to organize (not needed for --undo)
 
-System Status
-─────────────
-Organization complete!
+options:
+  -h, --help  Show this help message and exit
+  --undo      Undo last organization session
 ```
 
-## Configuration
+---
+
+## ⚙️ Configuration
 
 SortMyChaos Pro uses a `config.yaml` file to define file categories and their associated extensions. If the file doesn't exist, a default configuration is automatically created.
 
-### Default Configuration
+### 📄 Default Configuration
 ```yaml
 categories:
   Images:
@@ -153,69 +211,132 @@ categories:
   Others: []  # Files not matching any category
 ```
 
-### Customizing Categories
-1. Edit `config.yaml` in your project root
-2. Add new categories or modify existing ones
-3. Restart the application to apply changes
+### 🔧 Customizing Categories
 
-**Note**: Extensions are case-insensitive. Files without matching extensions go to the "Others" folder.
+1. **Edit the config file**:
+   ```bash
+   nano config.yaml  # or your preferred editor
+   ```
 
-## Undo Functionality
+2. **Add new categories**:
+   ```yaml
+   categories:
+     # ... existing categories ...
+     Spreadsheets:
+       - .xlsx
+       - .xls
+       - .csv
+     Presentations:
+       - .pptx
+       - .ppt
+   ```
 
-The undo feature uses a SQLite database (`history.db`) to track all file moves. Each organization session creates a new entry, allowing precise reversal.
+3. **Restart the application** to apply changes
 
-- **Automatic Tracking**: Every move is logged with source and destination paths
-- **Session-Based**: Undo affects only the last complete organization session
-- **Safe Reversal**: Moves files back to their original locations
-- **Database Cleanup**: Undone sessions are removed from the database
-
-## Logging
-
-All operations are logged to `sort_log.txt` with timestamps:
-
-```
-2026-03-27 10:30:15 - INFO - Moved /path/to/file.jpg to /path/to/Images/file.jpg
-2026-03-27 10:30:16 - ERROR - Failed to move /path/to/locked_file.txt: Permission denied
-```
-
-Log levels include:
-- **INFO**: Successful operations
-- **ERROR**: Failed operations with details
-- **WARNING**: Non-critical issues
-
-## Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Setup
-```bash
-git clone https://github.com/yourusername/SortMyChaos.git
-cd SortMyChaos
-pip install -r requirements.txt
-pip install flake8  # For linting
-```
-
-### Code Style
-- Follow PEP 8 guidelines
-- Use type hints where appropriate
-- Ensure all code passes flake8 linting
-- Add tests for new features
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Developer
-
-**Yazan Ayasrah** - Senior DevOps & Python Engineer  
-Specializing in Pearson BTEC IT Systems with Triple-Certified Gemini AI Specialist status.
+> **💡 Tip**: Extensions are case-insensitive. Files without matching extensions go to the "Others" folder.
 
 ---
 
-*Built with ❤️ using Python, asyncio, and Rich*
+## 🔄 Undo Functionality
+
+The undo feature uses a SQLite database (`history.db`) to track all file moves. Each organization session creates a new entry, allowing precise reversal.
+
+### 🔍 How It Works
+- **Session Tracking**: Every organization run creates a unique session ID
+- **Move Logging**: Each file move is recorded with source and destination paths
+- **Database Storage**: All operations are stored in a local SQLite database
+
+### ✨ Key Features
+- 🔄 **Automatic Tracking**: Every move is logged automatically
+- 🎯 **Session-Based**: Undo affects only the last complete organization session
+- 🛡️ **Safe Reversal**: Moves files back to their original locations
+- 🧹 **Database Cleanup**: Undone sessions are removed from the database
+
+---
+
+## 📝 Logging
+
+All operations are logged to `sort_log.txt` with timestamps for debugging and auditing.
+
+### 📄 Sample Log Output
+```
+2026-03-27 10:30:15 - INFO - Moved /path/to/file.jpg to /path/to/Images/file.jpg
+2026-03-27 10:30:16 - INFO - Moved /path/to/document.pdf to /path/to/Documents/document.pdf
+2026-03-27 10:30:17 - ERROR - Failed to move /path/to/locked_file.txt: Permission denied
+2026-03-27 10:30:18 - WARNING - File /path/to/duplicate.jpg already exists in destination
+```
+
+### 📊 Log Levels
+- **INFO**: Successful operations and general information
+- **ERROR**: Failed operations with error details
+- **WARNING**: Non-critical issues that don't stop execution
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+### 🚀 Getting Started
+1. **Fork** the repository
+2. **Clone** your fork: `git clone https://github.com/yourusername/SortMyChaos.git`
+3. **Create** a feature branch: `git checkout -b feature/amazing-feature`
+4. **Make** your changes
+5. **Test** thoroughly
+6. **Commit** your changes: `git commit -m 'Add amazing feature'`
+7. **Push** to the branch: `git push origin feature/amazing-feature`
+8. **Open** a Pull Request
+
+### 🛠️ Development Setup
+```bash
+git clone https://github.com/yourusername/SortMyChaos.git
+cd SortMyChaos
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+pip install flake8 pytest  # For linting and testing
+```
+
+### 📏 Code Style
+- Follow **PEP 8** guidelines
+- Use **type hints** where appropriate
+- Ensure code passes **flake8** linting
+- Write **tests** for new features
+- Keep commit messages clear and descriptive
+
+### 🐛 Found a Bug?
+- Check existing [issues](../../issues) first
+- Open a new issue with detailed description
+- Include steps to reproduce and system information
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Developer
+
+<div align="center">
+
+**Yazan Ayasrah**  
+*Senior DevOps & Python Engineer*  
+
+Specializing in Pearson BTEC IT Systems with Triple-Certified Gemini AI Specialist status.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/yazanayasrah)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/yazanayasrah)
+
+</div>
+
+---
+
+<div align="center">
+
+**Built with ❤️ using Python, asyncio, and Rich**
+
+*Organize your chaos, one file at a time!*
+
+</div>
