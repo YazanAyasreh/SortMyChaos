@@ -5,7 +5,7 @@
   
   [![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
   [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-  [![Build Status](https://github.com/yourusername/SortMyChaos/actions/workflows/python-app.yml/badge.svg)](https://github.com/yourusername/SortMyChaos/actions)
+  [![Build Status](https://github.com/YazanAyasreh/SortMyChaos/actions/workflows/python-app.yml/badge.svg)](https://github.com/YazanAyasreh/SortMyChaos/actions)
   
   *A high-performance, asynchronous file management engine that organizes your chaotic directories with lightning speed and professional-grade features.*
 </div>
@@ -49,7 +49,7 @@
 
 ```bash
 # Clone and setup
-git clone https://github.com/yourusername/SortMyChaos.git
+git clone https://github.com/YazanAyasreh/SortMyChaos.git
 cd SortMyChaos
 pip install -r requirements.txt
 
@@ -99,7 +99,7 @@ Organizing files... ⠦
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/SortMyChaos.git
+   git clone https://github.com/YazanAyasreh/SortMyChaos.git
    cd SortMyChaos
    ```
 
@@ -279,7 +279,7 @@ We welcome contributions! Here's how you can help:
 
 ### 🚀 Getting Started
 1. **Fork** the repository
-2. **Clone** your fork: `git clone https://github.com/yourusername/SortMyChaos.git`
+2. **Clone** your fork: `git clone https://github.com/YazanAyasreh/SortMyChaos.git`
 3. **Create** a feature branch: `git checkout -b feature/amazing-feature`
 4. **Make** your changes
 5. **Test** thoroughly
@@ -289,7 +289,7 @@ We welcome contributions! Here's how you can help:
 
 ### 🛠️ Development Setup
 ```bash
-git clone https://github.com/yourusername/SortMyChaos.git
+git clone https://github.com/YazanAyasreh/SortMyChaos.git
 cd SortMyChaos
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
