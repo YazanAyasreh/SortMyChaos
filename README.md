@@ -64,6 +64,38 @@ python main.py --undo
 
 ## 📸 Screenshots
 
+<details>
+<summary>Rich terminal dashboard & summary output (click to expand)</summary>
+
+```text
+System Status
+─────────────
+Starting organization...
+
+Organizing files... ✓
+
+File Organization Summary
+─────────────────────────
+Category    Count    Total Size (MB)
+Images      15       245.67
+Documents   8        12.34
+Videos      3        1024.56
+Others      2        5.78
+
+System Status
+─────────────
+Organization complete!
+```
+
+</details>
+
+---
+```
+
+---
+
+## 📸 Screenshots
+
 ### Terminal Interface
 ```
 ┌─ System Status ──────────────────────────────────────┐
